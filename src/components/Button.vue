@@ -22,5 +22,6 @@ button {
   margin: 1.2em;
   text-align: center;
   padding: 5px;
+  color: red;
 }
 </style>

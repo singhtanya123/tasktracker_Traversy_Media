@@ -4,7 +4,8 @@
     <Button text="Add Task" color="lightgreen" />
     <Button text="Update Task" color="yellow" />
     <Button text="Delete Task" color="crimsonred" />
-    <Tasks :tasks="tasks" />
+    <Tasks @toggle-alarm="toggleAlarm" 
+    @delete-task="deleteTask" :tasks="tasks" />
   </div>
 </template>
 
@@ -27,6 +28,15 @@ export default {
   components: {
     Button,
     Tasks,
+  },
+  methods:{
+    deleteTask(id){
+      if(confirm('Are you sure?')){
+      this.tasks=this.tasks.filter(task=>task.id!==id);
+    }},
+    toggleAlarm(id){
+      this.tasks=this.tasks.map(task=>task.id==id? {...task, alarm:!task.alarm}: task);
+    }
   },
   created() {
     // it is a method ex: this is used to load html at the starting or when page loads
