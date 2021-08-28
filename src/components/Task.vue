@@ -1,45 +1,45 @@
 <template>
-    <div :class="[task.alarm? 'reminder': '','task']">
-        <h5>{{task.text}}
-            <i @click="onDelete('{{task.id}}')" class="fas fa-times"></i>
-        </h5>        
-        <p  class="reminder">{{task.reminder}}</p>
-    </div>
+  <div :class="[task.alarm ? 'reminder' : '', 'task']">
+    <h5>
+      {{ task.text }} <i @click="onDelete(task.id)" class="fas fa-times"></i>
+      <!--delete-->
+    </h5>
+    <p class="reminder">{{ task.reminder }}</p>
+  </div>
 </template>
 
 <script>
 export default {
-    name : 'Task',
-    props:{
-        task: Object
+  name: "Task",
+  props: {
+    task: Object,
+  },
+  methods: {
+    onDelete(id) {
+      console.log(id);
     },
-    methods:{
-        onDelete(){
-            
-        }
-    }
-}
+  },
+};
 </script>
 
-<style >
+<style scoped>
 .task {
-    background:hotpink;
-    margin: 5px;        
-    padding: 10px 20px;
-    cursor: pointer;
-    min-block-size: 20px;
+  background: hotpink;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
-.task.reminder{
-    border-left: 5px solid green;
+.task.reminder {
+  border-left: 5px solid green;
 }
 
-.task h3{
-    display: flex;
-    justify-items: center;
-    text-align: center;
-    justify-content: space-between;
+.task h5 {
+  display: flex;
+  justify-items: left;
+  text-align: left;
+  justify-content: space-between;
 }
-.task h3 i{
-    padding-left: -100px;
-    }
+p {
+  text-align: left;
+}
 </style>

@@ -54,7 +54,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.first {
+  text-align: center
+}
 img {
   border-radius: 50%;
   border: 5px #333 solid;
