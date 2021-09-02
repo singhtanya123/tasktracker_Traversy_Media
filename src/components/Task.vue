@@ -1,7 +1,10 @@
 <template>
-  <div @dblclick="$emit('toggle-alarm',task.id)" :class="[task.alarm ? 'reminder' : '', 'task']">
+  <div
+    @dblclick="$emit('toggle-alarm', task.id)"
+    :class="[task.alarm ? 'reminder' : '', 'task']"
+  >
     <h5>
-      {{ task.text }} 
+      {{ task.text }}
       <i @click="onDelete(task.id)" class="fas fa-times"></i>
       <!--delete-->
     </h5>
@@ -17,7 +20,7 @@ export default {
   },
   methods: {
     onDelete(id) {
-      this.$emit('delete-task',id)
+      this.$emit("delete-task", id);
     },
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <button @click="onClick()" :style="{ background: color }" >{{ text }}</button>
+  <button @click="onClick()" :style="{ background: color }">{{ text }}</button>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
 
 <style>
 button {
-  margin-top:-5em;
+  margin-top: -5em;
   text-align: center;
   padding: 5px;
   color: red;

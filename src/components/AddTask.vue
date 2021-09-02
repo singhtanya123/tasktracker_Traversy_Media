@@ -1,5 +1,5 @@
 <template>
-<!--form created and bind with @submit used in type input (save button) to a function onSubmit-->
+  <!--form created and bind with @submit used in type input (save button) to a function onSubmit-->
   <form @submit="onSubmit" class="add-task">
     <div class="form-control">
       <label class="task-label">Add Task</label>
@@ -10,7 +10,7 @@
         placeholder="Add Task"
         v-model="text"
       />
-      {{text}}
+      {{ text }}
     </div>
     <div class="form-control">
       <label class="task-label">Add Day</label>
@@ -80,13 +80,13 @@ export default {
         day: this.day,
         reminder: this.reminder,
         alarm: this.alarm,
-      }
-      this.$emit("addTask",newTask)
+      };
+      this.$emit("addTask", newTask);
 
-      this.text = "",
-      this.day = "",
-      this.reminder = "",
-      this.alarm = false;
+      (this.text = ""),
+        (this.day = ""),
+        (this.reminder = ""),
+        (this.alarm = false);
     },
   },
 };

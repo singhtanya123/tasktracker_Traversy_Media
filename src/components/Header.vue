@@ -1,14 +1,19 @@
 <template>
   <div class="header">
-    <h1 class="center">{{ title }}</h1>   
+    <h1 class="center">{{ title }}</h1>
     <div class="row">
-    <div col-8>
-    <AddTask @addTask="addTask" /> </div>
-    <div col-4>
-    <Button  text="Add Task" color="lightgreen" />   
-    </div> </div>
-    <Tasks  @toggle-alarm="toggleAlarm" 
-    @delete-task="deleteTask" :tasks="tasks" />
+      <div col-8>
+        <AddTask @addTask="addTask" />
+      </div>
+      <div col-4>
+        <Button text="Add Task" color="lightgreen" />
+      </div>
+    </div>
+    <Tasks
+      @toggle-alarm="toggleAlarm"
+      @delete-task="deleteTask"
+      :tasks="tasks"
+    />
   </div>
 </template>
 
@@ -31,20 +36,23 @@ export default {
   },
   components: {
     Button,
-    Tasks,    
-    AddTask
+    Tasks,
+    AddTask,
   },
-  methods:{
-    addTask(task){
-      this.tasks=[...this.tasks,task]
+  methods: {
+    addTask(task) {
+      this.tasks = [...this.tasks, task];
     },
-    deleteTask(id){
-      if(confirm('Are you sure?')){
-      this.tasks=this.tasks.filter(task=>task.id!==id);
-    }},
-    toggleAlarm(id){
-      this.tasks=this.tasks.map(task=>task.id==id? {...task, alarm:!task.alarm}: task);
-    }
+    deleteTask(id) {
+      if (confirm("Are you sure?")) {
+        this.tasks = this.tasks.filter((task) => task.id !== id);
+      }
+    },
+    toggleAlarm(id) {
+      this.tasks = this.tasks.map((task) =>
+        task.id == id ? { ...task, alarm: !task.alarm } : task
+      );
+    },
   },
   created() {
     // it is a method ex: this is used to load html at the starting or when page loads
