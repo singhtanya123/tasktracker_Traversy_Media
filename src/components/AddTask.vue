@@ -40,8 +40,8 @@
         placeholder="Set Alarm"
         v-model="alarm"
       >
-        <option>True</option>
-        <option>False</option>
+        <option value="true">True</option> //Give in value which is about to pass it, can use these values by name.
+        <option value="false">False</option>
       </select>
     </div>
     <input type="submit" value="Save Task" class="save-btn" />
@@ -79,14 +79,15 @@ export default {
         text: this.text,
         day: this.day,
         reminder: this.reminder,
-        alarm: this.alarm,
-      };
-      this.$emit("addTask", newTask);
+        alarm: this.alarm
+      }
 
-      (this.text = ""),
-        (this.day = ""),
-        (this.reminder = ""),
-        (this.alarm = false);
+      this.$emit("add-task", newTask);
+
+      this.text = "",
+      this.day = "",
+      this.reminder = "",
+      this.alarm = false;
     },
   },
 };

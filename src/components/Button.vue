@@ -11,7 +11,7 @@ export default {
   },
   methods: {
     onClick() {
-      console.log("button click");
+      this.$emit('show-add-task')
     },
   },
 };
@@ -19,10 +19,8 @@ export default {
 
 <style>
 button {
-  margin-top: -5em;
   text-align: center;
   padding: 5px;
-  color: red;
   float: right;
 }
 </style>
