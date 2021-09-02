@@ -1,10 +1,13 @@
 <template>
   <div class="header">
-    <h1>{{ title }}</h1>
-    <Button text="Add Task" color="lightgreen" />
-    <Button text="Update Task" color="yellow" />
-    <Button text="Delete Task" color="crimsonred" />
-    <Tasks @toggle-alarm="toggleAlarm" 
+    <h1 class="center">{{ title }}</h1>   
+    <div class="row">
+    <div col-8>
+    <AddTask @addTask="addTask" /> </div>
+    <div col-4>
+    <Button  text="Add Task" color="lightgreen" />   
+    </div> </div>
+    <Tasks  @toggle-alarm="toggleAlarm" 
     @delete-task="deleteTask" :tasks="tasks" />
   </div>
 </template>
@@ -12,6 +15,7 @@
 <script>
 import Button from "./Button";
 import Tasks from "./Tasks";
+import AddTask from "./AddTask";
 export default {
   el: "#header",
   props: {
@@ -27,9 +31,13 @@ export default {
   },
   components: {
     Button,
-    Tasks,
+    Tasks,    
+    AddTask
   },
   methods:{
+    addTask(task){
+      this.tasks=[...this.tasks,task]
+    },
     deleteTask(id){
       if(confirm('Are you sure?')){
       this.tasks=this.tasks.filter(task=>task.id!==id);
@@ -76,10 +84,7 @@ export default {
 
 <style scoped>
 .header {
-  background-color: lightpink;
-  align-items: center;
   margin-bottom: 10px;
-  text-align: center;
 }
 .button {
   padding: 5px;
