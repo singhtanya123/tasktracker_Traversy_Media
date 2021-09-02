@@ -1,4 +1,4 @@
-# ny-app
+
 
 ## Project setup
 ```
