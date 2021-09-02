@@ -20,7 +20,11 @@ export default {
 <style>
 button {
   text-align: center;
-  padding: 5px;
+  padding: 0.5em;
   float: right;
+  word-break: break-all;
+  font-size: 0.8em;
+  font-size-adjust: inherit;
+  font-weight: 600;
 }
 </style>

@@ -26,17 +26,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 20px;
-  margin-left: 10px;
-  background-color: lightpink;
+  margin-left: 1em;  
+  font-weight: 550;
 }
-
 .addTask {
   margin-left: 2px;
 }
 .container {
   box-sizing: border-box;
-  border: 1px solid blue;
-  padding: 30px;
+  padding: 5px;
   min-height: 300px;
 }
 .center {

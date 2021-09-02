@@ -28,13 +28,13 @@ export default {
 
 <style scoped>
 .task {
-  background: hotpink;
+  background: #999DA0;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
 }
 .task.reminder {
-  border-left: 5px solid green;
+  border-left: 8px solid rgb(31, 165, 31);
 }
 
 .task h5 {

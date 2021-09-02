@@ -4,7 +4,7 @@
     <h1 class="center">{{ title }}</h1>
     
       <div v-if="showTask">
-        <AddTask @show-add-task="addTask" />
+        <AddTask @add-task="addTask" />
       </div>
     
     <Tasks
@@ -95,6 +95,7 @@ export default {
 <style scoped>
 .header {
   margin-bottom: 10px;
+  font-size: 1em;
 }
 .button {
   padding: 5px;
