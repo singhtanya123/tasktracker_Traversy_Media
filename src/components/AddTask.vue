@@ -40,7 +40,8 @@
         placeholder="Set Alarm"
         v-model="alarm"
       >
-        <option value="true">True</option> //Give in value which is about to pass it, can use these values by name.
+        <option value="true">True</option>
+        //Give in value which is about to pass it, can use these values by name.
         <option value="false">False</option>
       </select>
     </div>
@@ -79,15 +80,15 @@ export default {
         text: this.text,
         day: this.day,
         reminder: this.reminder,
-        alarm: this.alarm
-      }
+        alarm: this.alarm,
+      };
 
       this.$emit("add-task", newTask);
 
-      this.text = "",
-      this.day = "",
-      this.reminder = "",
-      this.alarm = false;
+      (this.text = ""),
+        (this.day = ""),
+        (this.reminder = ""),
+        (this.alarm = false);
     },
   },
 };

@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 .task {
-  background: #999DA0;
+  background: #999da0;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;

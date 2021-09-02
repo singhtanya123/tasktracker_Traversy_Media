@@ -26,7 +26,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 20px;
-  margin-left: 1em;  
+  margin-left: 1em;
   font-weight: 550;
 }
 .addTask {

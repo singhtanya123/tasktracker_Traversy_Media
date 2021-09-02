@@ -1,12 +1,16 @@
 <template>
   <div class="header">
-     <Button @show-add-task="showAddTask" :text="showTask ?'Close Add Task': 'Show Add Task'"  :color="showTask ?'red': 'lightgreen'" />
+    <Button
+      @show-add-task="showAddTask"
+      :text="showTask ? 'Close Add Task' : 'Show Add Task'"
+      :color="showTask ? 'red' : 'lightgreen'"
+    />
     <h1 class="center">{{ title }}</h1>
-    
-      <div v-if="showTask">
-        <AddTask @add-task="addTask" />
-      </div>
-    
+
+    <div v-if="showTask">
+      <AddTask @add-task="addTask" />
+    </div>
+
     <Tasks
       @toggle-alarm="toggleAlarm"
       @delete-task="deleteTask"
@@ -30,7 +34,7 @@ export default {
   data() {
     return {
       tasks: [],
-      showTask: false
+      showTask: false,
     };
   },
   components: {
@@ -39,8 +43,8 @@ export default {
     AddTask,
   },
   methods: {
-    showAddTask(){
-      this.showTask=!this.showTask
+    showAddTask() {
+      this.showTask = !this.showTask;
     },
     addTask(task) {
       this.tasks = [...this.tasks, task];
@@ -53,7 +57,7 @@ export default {
     toggleAlarm(id) {
       this.tasks = this.tasks.map((task) =>
         task.id == id ? { ...task, alarm: !task.alarm } : task
-      )
+      );
     },
   },
   created() {

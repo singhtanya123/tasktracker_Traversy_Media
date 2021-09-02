@@ -11,7 +11,7 @@ export default {
   },
   methods: {
     onClick() {
-      this.$emit('show-add-task')
+      this.$emit("show-add-task");
     },
   },
 };
