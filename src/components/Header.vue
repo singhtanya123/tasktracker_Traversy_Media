@@ -60,6 +60,17 @@ export default {
       );
     },
   },
+  /* 
+    async fetchTasks() {
+    const res = await fetch('http://localhost:3000/tasks');
+    const data = await res.json();
+    return data;
+  },
+  async created() {
+    // it is a method ex: this is used to load html at the starting or when page loads
+    this.tasks = await this.fetchTasks()
+  },
+*/
   created() {
     // it is a method ex: this is used to load html at the starting or when page loads
     this.tasks = [
