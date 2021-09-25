@@ -1,16 +1,17 @@
 <template>
   <div class="header">
+    <!--open close of new create user button-->
     <Button
       @show-add-task="showAddTask"
       :text="showTask ? 'Close Add Task' : 'Show Add Task'"
       :color="showTask ? 'red' : 'lightgreen'"
     />
     <h1 class="center">{{ title }}</h1>
-
+  <!--form will be show when button is clicked-->
     <div v-if="showTask">
       <AddTask @add-task="addTask" />
     </div>
-
+  
     <Tasks
       @toggle-alarm="toggleAlarm"
       @delete-task="deleteTask"
@@ -60,17 +61,21 @@ export default {
       );
     },
   },
-  /* 
-    async fetchTasks() {
-    const res = await fetch('http://localhost:3000/tasks');
+
+    async fetchTasks() {     
+      
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos');
     const data = await res.json();
-    return data;
+    
+    return data; 
   },
   async created() {
     // it is a method ex: this is used to load html at the starting or when page loads
     this.tasks = await this.fetchTasks()
   },
-*/
+
+/*
+
   created() {
     // it is a method ex: this is used to load html at the starting or when page loads
     this.tasks = [
@@ -103,7 +108,7 @@ export default {
         alarm: true,
       },
     ];
-  },
+  }, */
 };
 </script>
 

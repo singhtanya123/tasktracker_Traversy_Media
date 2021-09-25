@@ -6,7 +6,7 @@
     <h1>{{ firstName }} {{ lastName }}</h1>
     <p>{{ email }}</p>
     <!--next task click on this button and get some event-->
-    <button @click="getUser()" :class="gender">Print</button>
+    <v-btn @click="getUser()" :class="gender">Print</v-btn>
     <h1>{{ msg }}</h1>
   </div>
 </template>
@@ -72,7 +72,7 @@ img {
   background-color: rgb(228, 12, 131);
   border-color: rgb(228, 12, 131);
 }
-button {
+.v-btn {
   padding: 5px 10px 5px 10px; /*top right bottom left*/
 }
 </style>
